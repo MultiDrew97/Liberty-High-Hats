@@ -1,0 +1,11 @@
+.tree-expand {
+	cursor: pointer;
+}
+
+.tree-leaf {
+	margin-left: 30%;
+}
+
+.tree-root {
+	margin-left: 10%;
+}

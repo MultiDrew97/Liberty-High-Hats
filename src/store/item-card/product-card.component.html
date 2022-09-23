@@ -1,0 +1,34 @@
+<!--<article [id]="item?.id ?? id" class="item">
+	<header title="item.id">
+		<h3> {{item?.id ?? id}} </h3>
+	</header>
+	<section>
+		<img [src]="item?.imgLocation ?? imgLocation" [alt]="item?.name ?? name"/>
+		<p> {{ item?.name ?? name }} </p>
+	</section>
+	<footer>
+		<p> {{ (item?.price ?? price) | currency : "USD" }} </p>
+	</footer>
+</article>-->
+
+<mat-grid-tile-header>{{ product.name }}</mat-grid-tile-header>
+<div class="product-image-container centered">
+	<img class="product-image centered" [src]="product.imgLocation" [alt]="product.name" />
+</div>
+<mat-grid-tile-footer id="item-footer">
+	<div class="price">
+		{{ product.price | currency : "USD"}}
+	</div>
+	<div class="cart-cluster">
+		<span id="cart-spacer"></span>
+		<div class="quantity-cluster">
+			<!--<button (click)="decrement()">-</button>-->
+			<input id="quantity" [(ngModel)]="quantity" type="number" min="1"/>
+			<!--<button (click)="increment()">+</button>-->
+		</div>
+		<!--<mat-slider [value]="quantity" [min]="1" valueText="{{quantity}}"></mat-slider>-->
+		<button mat-icon-button (click)="cart()" id="cart-button">
+			<mat-icon svgIcon="cart">Cart</mat-icon>
+		</button>
+	</div>
+</mat-grid-tile-footer>

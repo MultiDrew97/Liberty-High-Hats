@@ -1,0 +1,40 @@
+.item {
+	text-align: center;
+	width: 10vw;
+}
+
+#item-footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.quantity-cluster {
+	display: flex;
+	flex-direction: row;
+	height: fit-content;
+}
+
+.cart-cluster {
+	display: flex;
+	flex-direction: row;
+	float: top;
+}
+
+#cart-button {
+	/*position: relative;
+	bottom: 10px;
+	left: 15px;*/
+	scale: 0.75;
+	bottom: 10px;
+}
+
+#cart-spacer {
+	width: 50px;
+	height: inherit;
+}
+
+#quantity {
+	text-align: center;
+	width: 100%;
+	float: right;
+}

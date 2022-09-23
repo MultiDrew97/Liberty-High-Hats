@@ -1,0 +1,17 @@
+<div id="store-container" cdk-scrollable>
+	<div id="tree-container">
+		<lhh-store-tree (filterUpdated)="dataSource.filterByTags($event)"></lhh-store-tree>
+	</div>
+	<div id="items-container">
+		<div id="items-search">
+			<input placeholder="Search..." [(ngModel)]="dataSource.filter">
+			<!--<button mat-icon-button (click)="test()">Search</button>-->
+		</div>
+		<div id="items">
+			<lhh-grid-list [dataSource]="dataSource" (addToCart)="cart.addItem($event)" [gutterSize]="gutterSize"></lhh-grid-list>
+		</div>
+		<!--<div class="product-container" *ngFor="let item of products">
+			<lhh-product [item]="item"></lhh-product>
+		</div>-->
+	</div>
+</div>

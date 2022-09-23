@@ -1,0 +1,14 @@
+<div>
+	<button mat-icon-button (click)="closeMenu.emit()">
+		<mat-icon svgIcon="close">close</mat-icon>
+	</button>
+</div>
+<nav>
+	<ul id="menu-links">
+		<button mat-flat-button *ngFor="let navLink of navLinks"
+				[routerLink]="navLink.href" routerLinkActive="link-active"
+		  		(click)="navigate(navLink.href)">
+			<li>{{ navLink.text }}</li>
+		</button>
+	</ul>
+</nav>

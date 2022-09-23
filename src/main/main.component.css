@@ -1,0 +1,33 @@
+#header-container {
+	background-color: hsl(var(--primary-color));
+}
+
+#footer-container {
+	background-color: hsl(var(--secondary-color));
+}
+
+#main {
+	width: 100vw;
+	height: 100vh;
+	border: none;
+	border-collapse: collapse;
+}
+
+#center-pane-container {
+	padding: 5%;
+}
+
+#left-pane-container, #right-pane-container {
+	background-color: black;
+	color: white;
+	width: 15%;
+	text-align: center;
+}
+
+#top-button {
+	float: right;
+	position: fixed;
+	bottom: 10%;
+	right: 10%;
+	opacity: 60%;
+}

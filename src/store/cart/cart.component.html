@@ -1,0 +1,26 @@
+<div id="cart-pane">
+	<header id="cart-header">
+		<button mat-icon-button (click)="closeCart.emit()">
+			<mat-icon svgIcon="close"></mat-icon>
+		</button>
+	</header>
+
+	<span id="top-spacer"></span>
+
+	<div *ngIf="!cart.isEmpty" id="full-cart">
+		<div *ngFor="let item of cart.Cart; index as i">
+			<lhh-cart-item [cartItem]="item" [itemIndex]="i" (removeItem)="cart.removeByIndex($event)"></lhh-cart-item>
+		</div>
+	</div>
+
+	<div *ngIf="cart.isEmpty" id="empty-cart" class="centered">
+		<h3>No items added</h3>
+	</div>
+
+	<span id="bottom-spacer"></span>
+
+	<div id="cart-footer" class="bottom">
+		<button id="clear-cart" (click)="clearCart()" mat-flat-button>Empty Cart</button>
+		<button (click)="goToCheckout()" mat-flat-button>Check Out</button>
+	</div>
+</div>

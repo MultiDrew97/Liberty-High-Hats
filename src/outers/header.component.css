@@ -1,0 +1,53 @@
+#icon-container {
+	padding: 1%;
+	height: fit-content;
+}
+
+#header {
+	display: flex;
+}
+
+.nav-container {
+	max-width: 100%;
+	min-width: 50%;
+	width: auto;
+}
+
+nav ul {
+	display: flex;
+	flex-flow: row;
+}
+
+.nav-link {
+	background-color: hsl(var(--primary-color));
+	width: max-content;
+	height: max-content;
+}
+
+.nav-link:hover {
+	background-color: hsl(var(--secondary-color), 50%);
+}
+
+#space {
+	width: 40%;
+}
+
+#cart-container {
+	width: fit-content;
+	height: fit-content;
+}
+
+#cart {
+	margin: 10%
+}
+
+#cart-spacer {
+	width: 650px;
+	height: inherit;
+}
+
+#title:hover {
+	cursor: pointer;
+}
+
+

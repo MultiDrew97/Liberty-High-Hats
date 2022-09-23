@@ -1,0 +1,21 @@
+#footer, #header, .nav-link {
+	color: black
+}
+
+.nav-link {
+	text-decoration: none;
+	padding: 1%;
+}
+
+#nav-links {
+	list-style: none;
+	padding: 1% 5%;
+}
+
+.nav-link-item {
+	width: fit-content;
+}
+
+.link-active {
+	background-color: blue;
+}

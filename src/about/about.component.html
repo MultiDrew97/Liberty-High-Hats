@@ -1,0 +1,40 @@
+<div id="about-container" class="container">
+	<article *ngFor="let about of abouts" [id]="about.name" class="about">
+		<header class="about-header">
+			<img class="about-pic" [src]="about.imgLocation" [alt]="about.name" />
+			<h3 class="about-name">{{ about.name }}</h3>
+		</header>
+		<section class="about-body">
+			<div>
+				<p>{{ about.text }}</p>
+			</div>
+		</section>
+		<footer class="about-footer">
+			<a (click)="router.navigate(['login'])"><p>Check this out!</p></a>
+			<div class="socials">
+				<button mat-icon-button *ngIf="about.facebook">
+					<a [href]="about.facebook">
+						<mat-icon svgIcon="facebook">facebook</mat-icon>
+					</a>
+				</button>
+				<button mat-icon-button *ngIf="about.twitter">
+					<a [href]="about.twitter">
+						<mat-icon svgIcon="twitter">facebook</mat-icon>
+					</a>
+				</button>
+				<button mat-icon-button *ngIf="about.instagram">
+					<a [href]="about.instagram">
+						<mat-icon svgIcon="instagram">instagram</mat-icon>
+					</a>
+				</button>
+				<button mat-icon-button *ngIf="about.youtube">
+					<a [href]="about.youtube">
+						<mat-icon svgIcon="youtube">youtube</mat-icon>
+					</a>
+				</button>
+			</div>
+		</footer>
+
+		<hr />
+	</article>
+</div>

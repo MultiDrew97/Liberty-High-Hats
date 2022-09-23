@@ -1,0 +1,49 @@
+<!--
+<header id="header">
+	<div id="icon-container" (click)="router.navigate(['/'])">
+		<img id="logo" [src]="logoLocation" alt="logo" />
+	</div>
+	<nav class="nav-container">
+		<ul id="nav-links">
+			<button mat-flat-button class="nav-link" *ngFor="let navLink of navLinks"
+			   (click)="router.navigate([navLink.href])" routerLinkActive="nav-active"><li>{{ navLink.text }}</li></button>
+		</ul>
+	</nav>
+
+	<span id="space"></span>
+
+	<div id="cart-container" class="centered">
+		&lt;!&ndash;<button mat-icon-button id="cart">&ndash;&gt;
+			<mat-icon [matBadge]="cart.Quantity" matBadgeColor="accent" id="cart">
+				<img [src]="cartIconLocation" alt="" />
+			</mat-icon>
+		&lt;!&ndash;</button>&ndash;&gt;
+	</div>
+</header>
+-->
+
+<mat-sidenav-content>
+	<mat-toolbar>
+		<mat-toolbar-row>
+			<button mat-icon-button (click)="openMenuSide()">
+				<mat-icon svgIcon="menu">menu</mat-icon>
+			</button>
+			<span id="title" (click)="router.navigate(['/'])">Liberty High Hats</span>
+		</mat-toolbar-row>
+		<mat-toolbar-row>
+			<nav class="nav-container">
+				<ul id="nav-links">
+					<button mat-flat-button *ngFor="let navLink of navLinks"
+							[routerLink]="navLink.href" routerLinkActive="link-active"
+							(click)="router.navigate([navLink.href], navExtras)">
+						<li>{{ navLink.text }}</li>
+					</button>
+				</ul>
+			</nav>
+			<span id="cart-spacer"></span>
+			<button mat-icon-button (click)="openCartSide()">
+				<mat-icon [matBadge]="cart.TotalItems" svgIcon="cart">cart</mat-icon>
+			</button>
+		</mat-toolbar-row>
+	</mat-toolbar>
+</mat-sidenav-content>

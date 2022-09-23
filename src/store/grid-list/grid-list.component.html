@@ -1,0 +1,15 @@
+<div *ngIf="dataSource.filteredData.length > 0" id="display-products">
+	<mat-grid-list lhhGridList cols="4" rowHeight="1:2" gutterSize="{{gutterSize}}px">
+		<div *ngFor="let product of dataSource.filteredData">
+			<mat-grid-tile>
+				<lhh-product [product]="product" (addToCart)="addToCart.emit($event)"></lhh-product>
+			</mat-grid-tile>
+		</div>
+	</mat-grid-list>
+</div>
+<div id="no-products" *ngIf="dataSource.filteredData.length === 0" class="centered">
+	<h3>No products fit this search...</h3>
+</div>
+<span id="product-spacer"></span>
+<mat-paginator #paginator showFirstLastButtons="false" [pageSizeOptions]="sizeOptions" (page)="handlePage($event)">
+</mat-paginator>

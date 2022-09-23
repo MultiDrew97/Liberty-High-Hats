@@ -1,0 +1,53 @@
+<mat-sidenav-container>
+	<mat-sidenav position="start" [(opened)]="openMenu">
+		<lhh-menu (closeMenu)="openMenu = !openMenu"></lhh-menu>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<div id="main-container">
+			<table id="main">
+				<thead>
+				<tr>
+					<td colspan="3" id="header-container">
+						<lhh-header id="header" [(openCart)]="openCart" [(openMenu)]="openMenu"></lhh-header>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td id="left-pane-container">
+						<div id="left-pane">
+							<p>Left Pane!</p>
+						</div>
+					</td>
+					<td id="center-pane-container" class="centered">
+						<router-outlet></router-outlet>
+					</td>
+					<td id="right-pane-container">
+						<div id="right-pane">
+							<p>Right Pane!</p>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+				<tfoot>
+				<tr>
+					<td colSpan="3" id="footer-container">
+						<lhh-footer id="footer"></lhh-footer>
+					</td>
+				</tr>
+				</tfoot>
+			</table>
+
+			<div id="top-button" class="float-right" *ngIf="!atTop()">
+				<button (click)="toTop()" mat-icon-button>
+					<mat-icon svgIcon="top">
+						Top
+					</mat-icon>
+				</button>
+			</div>
+		</div>
+	</mat-sidenav-content>
+	<mat-sidenav position="end" [(opened)]="openCart">
+		<lhh-cart (closeCart)="openCart = false"></lhh-cart>
+	</mat-sidenav>
+</mat-sidenav-container>

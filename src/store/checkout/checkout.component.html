@@ -1,0 +1,23 @@
+<header>
+	<button mat-icon-button (click)="router.navigate(['store'])">
+		<mat-icon svgIcon="close">Close</mat-icon>
+	</button>
+</header>
+<div>
+	<mat-list>
+		<mat-list-item *ngFor="let item of cart.Cart">
+			<div>
+				{{ item.product.name }}
+			</div>
+			<span id="spacer"></span>
+			<div>
+				{{ item.quantity }}
+			</div>
+		</mat-list-item>
+	</mat-list>
+
+	<div>
+		<p>{{ cartTotal | currency : "USD"}}</p>
+	</div>
+</div>
+

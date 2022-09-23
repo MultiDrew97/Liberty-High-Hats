@@ -1,0 +1,26 @@
+<mat-tree id="product-types" [dataSource]="treeSource" [treeControl]="treeControl">
+	<mat-tree-node *matTreeNodeDef="let node">
+		<mat-checkbox class="tree-root" (change)="onFilterChange($event, node)" [checked]="node.checked" matTreeNodeToggle matTreeNodePadding>
+			{{ node.name }}
+		</mat-checkbox>
+	</mat-tree-node>
+	<mat-nested-tree-node *matTreeNodeDef="let node;when: hasChild">
+		<div class="tree-expand tree-root">
+			<button mat-icon-button matTreeNodePadding>
+				<mat-icon matTreeNodeToggle>
+					{{ treeControl.isExpanded(node) ? '-' : '+' }}
+				</mat-icon>
+			</button>
+
+
+			<mat-checkbox (change)="onFilterChange($event, node)" [checked]="node.checked" matTreeNodePadding>
+				<div class="tree-value">{{ node.name }}</div>
+			</mat-checkbox>
+		</div>
+
+		<div [hidden]="!treeControl.isExpanded(node)" class="tree-leaf" matTreeNodePadding>
+			<ng-container matTreeNodeOutlet></ng-container>
+		</div>
+	</mat-nested-tree-node>
+</mat-tree>
+

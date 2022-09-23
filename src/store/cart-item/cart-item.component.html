@@ -1,0 +1,10 @@
+<div id="cart-item" [matBadge]="cartItem.quantity">
+	<img [src]="cartItem.product.imgLocation" [alt]="cartItem.product.name"/>
+	<span id="spacer"></span>
+	<h3>{{ cartItem.product.name }}</h3>
+	<div>
+		<button mat-icon-button (click)="removeItem.emit(itemIndex)">
+			<mat-icon svgIcon="close">Remove</mat-icon>
+		</button>
+	</div>
+</div>
