@@ -6,35 +6,35 @@
 		<div id="main-container">
 			<table id="main">
 				<thead>
-				<tr>
-					<td colspan="3" id="header-container">
-						<lhh-header id="header" [(openCart)]="openCart" [(openMenu)]="openMenu"></lhh-header>
-					</td>
-				</tr>
+					<tr>
+						<td colspan="3" id="header-container">
+							<lhh-header id="header" [(openCart)]="openCart" [(openMenu)]="openMenu"></lhh-header>
+						</td>
+					</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<td id="left-pane-container">
-						<div id="left-pane">
-							<p>Left Pane!</p>
-						</div>
-					</td>
-					<td id="center-pane-container" class="centered">
-						<router-outlet></router-outlet>
-					</td>
-					<td id="right-pane-container">
-						<div id="right-pane">
-							<p>Right Pane!</p>
-						</div>
-					</td>
-				</tr>
+					<tr>
+						<td id="left-pane-container">
+							<div id="left-pane">
+								<p>Left Pane!</p>
+							</div>
+						</td>
+						<td id="center-pane-container" class="centered">
+							<router-outlet></router-outlet>
+						</td>
+						<td id="right-pane-container">
+							<div id="right-pane">
+								<p>Right Pane!</p>
+							</div>
+						</td>
+					</tr>
 				</tbody>
 				<tfoot>
-				<tr>
-					<td colSpan="3" id="footer-container">
-						<lhh-footer id="footer"></lhh-footer>
-					</td>
-				</tr>
+					<tr>
+						<td colSpan="3" id="footer-container">
+							<lhh-footer id="footer"></lhh-footer>
+						</td>
+					</tr>
 				</tfoot>
 			</table>
 
